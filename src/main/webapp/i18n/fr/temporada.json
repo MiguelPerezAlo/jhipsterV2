@@ -1,0 +1,21 @@
+{
+    "jhipsterApp": {
+        "temporada" : {
+            "home": {
+                "title": "Temporadas",
+                "createLabel": "Créer un nouveau Temporada",
+                "createOrEditLabel": "Créer ou éditer un Temporada"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Temporada {{ id }} ?"
+            },
+            "detail": {
+                "title": "Temporada"
+            },
+            "year": "Year",
+            "nombre": "Nombre",
+            "equipo": "Equipo"
+        }
+    }
+}
+

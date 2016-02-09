@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql"/>
+    <property name="autoIncrement" value="false" dbms="oracle"/>
+
+    <property name="floatType" value="real" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Socio.
+    -->
+    <changeSet id="20151217201254" author="jhipster">
+        <createTable tableName="SOCIO">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(255)"/>
+            <column name="nacimiento" type="date"/>
+            <column name="tipo" type="varchar(255)"/>
+            <column name="cuota" type="double"/>
+        </createTable>
+        
+        <createTable tableName="SOCIO_EQUIPO">
+            <column name="equipos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="socios_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="socios_id, equipos_id" tableName="SOCIO_EQUIPO"/>
+
+        <addForeignKeyConstraint baseColumnNames="socios_id"
+                                 baseTableName="SOCIO_EQUIPO"
+                                 constraintName="fk_socio_equipo_equipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="SOCIO"/>
+
+        <addForeignKeyConstraint baseColumnNames="equipos_id"
+                                 baseTableName="SOCIO_EQUIPO"
+                                 constraintName="fk_equipo_equipo_socio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="EQUIPO"/>
+        
+    </changeSet>
+</databaseChangeLog>

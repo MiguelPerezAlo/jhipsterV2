@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="jhipsterApp.entrenador.detail.title">Entrenador</span> {{entrenador.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.entrenador.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{entrenador.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.entrenador.nacimiento">Nacimiento</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{entrenador.nacimiento}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.entrenador.nacionalidad">Nacionalidad</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{entrenador.nacionalidad}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.entrenador.partidos">Partidos</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{entrenador.partidos}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.entrenador.equipo">equipo</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="equipo.detail({id:entrenador.equipo.id})">{{entrenador.equipo.nombre}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="jhipsterApp.jugador.detail.title">Jugador</span> {{jugador.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.nacimiento">Nacimiento</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.nacimiento}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.puntuacion">Puntuacion</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.puntuacion}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.asistencias">Asistencias</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.asistencias}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.rebotes">Rebotes</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.rebotes}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.posicion">Posicion</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.posicion}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.jugador.equipo">equipo</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="equipo.detail({id:jugador.equipo.id})">{{jugador.equipo.nombre}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="mySocioLabel" translate="jhipsterApp.socio.home.createOrEditLabel">Create or edit a Socio</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="socio.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label translate="jhipsterApp.socio.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="socio.nombre"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.socio.nacimiento" for="field_nacimiento">Nacimiento</label>
+            <input type="date" class="form-control" name="nacimiento" id="field_nacimiento"
+                    ng-model="socio.nacimiento"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.socio.tipo" for="field_tipo">Tipo</label>
+            <input type="text" class="form-control" name="tipo" id="field_tipo"
+                    ng-model="socio.tipo"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.socio.cuota" for="field_cuota">Cuota</label>
+            <input type="number" class="form-control" name="cuota" id="field_cuota"
+                    ng-model="socio.cuota"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.socio.equipo" for="field_equipo">equipo</label>
+            <select class="form-control" id="field_equipo" multiple name="equipo" ng-model="socio.equipos" ng-options="equipo as equipo.nombre for equipo in equipos track by equipo.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

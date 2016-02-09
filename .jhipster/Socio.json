@@ -1,0 +1,37 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "nacimiento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "cuota",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20151217201254",
+    "dto": "no",
+    "pagination": "no"
+}

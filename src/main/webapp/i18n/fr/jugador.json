@@ -1,0 +1,25 @@
+{
+    "jhipsterApp": {
+        "jugador" : {
+            "home": {
+                "title": "Jugadors",
+                "createLabel": "Créer un nouveau Jugador",
+                "createOrEditLabel": "Créer ou éditer un Jugador"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Jugador {{ id }} ?"
+            },
+            "detail": {
+                "title": "Jugador"
+            },
+            "nombre": "Nombre",
+            "nacimiento": "Nacimiento",
+            "puntuacion": "Puntuacion",
+            "asistencias": "Asistencias",
+            "rebotes": "Rebotes",
+            "posicion": "Posicion",
+            "equipo": "Equipo"
+        }
+    }
+}
+

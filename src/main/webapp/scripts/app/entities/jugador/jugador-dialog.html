@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myJugadorLabel" translate="jhipsterApp.jugador.home.createOrEditLabel">Create or edit a Jugador</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="jugador.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="jugador.nombre"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.nacimiento" for="field_nacimiento">Nacimiento</label>
+            <input type="date" class="form-control" name="nacimiento" id="field_nacimiento"
+                    ng-model="jugador.nacimiento"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.puntuacion" for="field_puntuacion">Puntuacion</label>
+            <input type="number" class="form-control" name="puntuacion" id="field_puntuacion"
+                    ng-model="jugador.puntuacion"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.asistencias" for="field_asistencias">Asistencias</label>
+            <input type="number" class="form-control" name="asistencias" id="field_asistencias"
+                    ng-model="jugador.asistencias"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.rebotes" for="field_rebotes">Rebotes</label>
+            <input type="number" class="form-control" name="rebotes" id="field_rebotes"
+                    ng-model="jugador.rebotes"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.posicion" for="field_posicion">Posicion</label>
+            <input type="text" class="form-control" name="posicion" id="field_posicion"
+                    ng-model="jugador.posicion"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="jhipsterApp.jugador.equipo" for="field_equipo">equipo</label>
+            
+            <select class="form-control" id="field_equipo" name="equipo" ng-model="jugador.equipo" ng-options="equipo as equipo.nombre for equipo in equipos track by equipo.id">
+                <option value=""></option>
+            </select>
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

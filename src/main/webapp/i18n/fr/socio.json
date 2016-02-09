@@ -1,0 +1,23 @@
+{
+    "jhipsterApp": {
+        "socio" : {
+            "home": {
+                "title": "Socios",
+                "createLabel": "Créer un nouveau Socio",
+                "createOrEditLabel": "Créer ou éditer un Socio"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Socio {{ id }} ?"
+            },
+            "detail": {
+                "title": "Socio"
+            },
+            "nombre": "Nombre",
+            "nacimiento": "Nacimiento",
+            "tipo": "Tipo",
+            "cuota": "Cuota",
+            "equipo": "Equipo"
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+{
+    "jhipsterApp": {
+        "temporada" : {
+            "home": {
+                "title": "Temporadas",
+                "createLabel": "Create a new Temporada",
+                "createOrEditLabel": "Create or edit a Temporada"
+            },
+            "created": "A new Temporada is created with identifier {{ param }}",
+            "updated": "A Temporada is updated with identifier {{ param }}",
+            "deleted": "A Temporada is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Temporada {{ id }}?"
+            },
+            "detail": {
+                "title": "Temporada"
+            },
+            "year": "Year",
+            "nombre": "Nombre",
+            "equipo": "Equipo"
+        }
+    }
+}

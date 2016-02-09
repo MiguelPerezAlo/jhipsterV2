@@ -1,0 +1,26 @@
+{
+    "jhipsterApp": {
+        "equipo" : {
+            "home": {
+                "title": "Equipos",
+                "createLabel": "Créer un nouveau Equipo",
+                "createOrEditLabel": "Créer ou éditer un Equipo"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Equipo {{ id }} ?"
+            },
+            "detail": {
+                "title": "Equipo"
+            },
+            "nombre": "Nombre",
+            "creacion": "Creacion",
+            "localidad": "Localidad",
+            "jugadors": "Jugadors",
+            "estadio": "Estadio",
+            "socio": "Socio",
+            "entrenador": "Entrenador",
+            "temporada": "Temporada"
+        }
+    }
+}
+

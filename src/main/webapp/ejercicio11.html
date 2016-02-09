@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="jhipsterApp" ng-controller="jugadorsCtrl">
+    <table>
+        <tr><td>Nombre</td><td>Puntuacion</td><td>Posicion</td></tr>
+        <tr ng-repeat="x in jugadores">
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+                {{x.nombre}}
+            </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+                {{x.puntuacion}}
+            </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+                {{x.posicion}}
+            </td>
+            <td ng-if="$even">
+                {{x.nombre}}
+            </td>
+            <td ng-if="$even">
+                {{x.puntuacion}}
+            </td>
+            <td ng-if="$even">
+                {{x.posicion}}
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var app = angular.module('jhipsterApp', []);
+    app.controller('jugadorsCtrl', function($scope, $http){
+        $http.get("api/jugadors").then(function(response){
+            $scope.jugadores = response.data;
+        });
+    });
+</script>
+</body>
+</html>

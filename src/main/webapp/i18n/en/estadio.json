@@ -1,0 +1,24 @@
+{
+    "jhipsterApp": {
+        "estadio" : {
+            "home": {
+                "title": "Estadios",
+                "createLabel": "Create a new Estadio",
+                "createOrEditLabel": "Create or edit a Estadio"
+            },
+            "created": "A new Estadio is created with identifier {{ param }}",
+            "updated": "A Estadio is updated with identifier {{ param }}",
+            "deleted": "A Estadio is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Estadio {{ id }}?"
+            },
+            "detail": {
+                "title": "Estadio"
+            },
+            "nombre": "Nombre",
+            "creacion": "Creacion",
+            "aforo": "Aforo",
+            "equipo": "Equipo"
+        }
+    }
+}

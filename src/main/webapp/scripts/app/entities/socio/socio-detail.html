@@ -1,0 +1,64 @@
+
+<div>
+    <h2><span translate="jhipsterApp.socio.detail.title">Socio</span> {{socio.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.socio.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{socio.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.socio.nacimiento">Nacimiento</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{socio.nacimiento}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.socio.tipo">Tipo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{socio.tipo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.socio.cuota">Cuota</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{socio.cuota}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jhipsterApp.socio.equipo">equipo</span>
+                </td>
+                <td>
+                    <span ng-repeat="equipo in socio.equipos">
+                        <a class="form-control-static" ui-sref="equipo.detail({id: {{equipo.id}}})">{{equipo.nombre}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

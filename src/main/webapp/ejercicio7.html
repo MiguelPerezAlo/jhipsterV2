@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+    <div ng-app="jhipsterApp" ng-controller="jugadorsCtrl">
+        <h3>Jugadores registrados</h3>
+        <ul>
+            <li ng-repeat="x in jugadores">
+                {{'Id: ' + x.id + ', Nombre: ' + x.nombre + ', Puntuación: ' + x.puntuacion + ', Rebotes: ' + x.rebotes + ', Asistencias: ' + x.asistencias + ', Posición: ' + x.posicion}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var app = angular.module('jhipsterApp', []);
+        app.controller('jugadorsCtrl', function($scope, $http){
+            $http.get("api/jugadors").then(function(response){
+                $scope.jugadores = response.data;
+            });
+        });
+    </script>
+</body>
+</html>

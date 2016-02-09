@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario nuevo jugador</title>
+</head>
+<body>
+    <div ng-app="jhipsterApp" ng-controller="newPlayerCtrl" ng-init="getEquipos()">
+        <div id="formulario">
+        <form name="nuevoJugador" ng-submit="save()">
+            <p>
+                Nombre: <br><input type="text" name="nombreJugador" ng-model="jugador.nombre" class="campo" required>
+                <span ng-show="nuevoJugador.nombreJugador.$touched&&nuevoJugador.nombreJugador.$invalid">Debes introducir el nombre obligatoriamente.</span>
+            </p>
+            <p>
+                Fecha de nacimiento: <br><input type="date" name="birthJugador" ng-model="jugador.aniversario" class="campo" required>
+                <span ng-show="nuevoJugador.birthJugador.$touched&&nuevoJugador.birthJugador.$invalid">Debes introducir una fecha de nacimiento.</span>
+            </p>
+            <p>
+                Puntuacion: <br><input type="number" name="puntJugador" ng-model="jugador.puntuacion" class="campo" required>
+                <span ng-show="nuevoJugador.puntJugador.$touched&&nuevoJugador.puntJugador.$invalid">La puntuación debe quedar registrada.</span>
+            </p>
+            <p>
+                Asistencias: <br><input type="number" name="asiJugador" ng-model="jugador.asistencias" class="campo" required>
+                <span ng-show="nuevoJugador.asiJugador.$touched&&nuevoJugador.asiJugador.$invalid">Es obligatorio indicar el numero de asistencias.</span>
+            </p>
+            <p>
+                Rebotes: <br><input type="number" name="rebJugador" ng-model="jugador.rebotes" class="campo" required>
+                <span ng-show="nuevoJugador.rebJugador.$touched&&nuevoJugador.rebJugador.$invalid">El campo rebotes debe completarse.</span>
+            </p>
+            <p>
+                Posición: <br><input type="text" name="posJugador" ng-model="jugador.posicion" class="campo" required>
+                <span ng-show="nuevoJugador.posJugador.$touched&&nuevoJugador.posJugador.$invalid">El jugador debe tener una posición.</span>
+            </p>
+            <p>
+                Equipo:<br>
+                <select name="equipo" ng-model="jugador.equipo.id" required>
+                    <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+                </select>
+            </p>
+            <input type="submit" value="Enviar" ng-disabled="nuevoJugador.$invalid" style="cursor:pointer">
+        </form>
+            </div>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/messageformat/messageformat.js"></script>
+    <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.constants.js"></script>
+    <script src="scripts/components/auth/auth.service.js"></script>
+    <script src="scripts/components/auth/principal.service.js"></script>
+    <script src="scripts/components/auth/authority.directive.js"></script>
+    <script src="scripts/components/auth/services/account.service.js"></script>
+    <script src="scripts/components/auth/services/activate.service.js"></script>
+    <script src="scripts/components/auth/services/password.service.js"></script>
+    <script src="scripts/components/auth/services/register.service.js"></script>
+    <script src="scripts/components/form/form.directive.js"></script>
+    <script src="scripts/components/form/maxbytes.directive.js"></script>
+    <script src="scripts/components/form/minbytes.directive.js"></script>
+    <script src="scripts/components/form/pager.directive.js"></script>
+    <script src="scripts/components/form/pagination.directive.js"></script>
+    <script src="scripts/components/admin/audits.service.js"></script>
+    <script src="scripts/components/admin/logs.service.js"></script>
+    <script src="scripts/components/admin/configuration.service.js"></script>
+    <script src="scripts/components/admin/monitoring.service.js"></script>
+    <script src="scripts/components/interceptor/auth.interceptor.js"></script>
+    <script src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
+    <script src="scripts/components/interceptor/notification.interceptor.js"></script>
+    <script src="scripts/components/navbar/navbar.directive.js"></script>
+    <script src="scripts/components/navbar/navbar.controller.js"></script>
+    <script src="scripts/components/user/user.service.js"></script>
+    <script src="scripts/components/util/truncate.filter.js"></script>
+    <script src="scripts/components/util/base64.service.js"></script>
+    <script src="scripts/components/alert/alert.service.js"></script>
+    <script src="scripts/components/alert/alert.directive.js"></script>
+    <script src="scripts/components/util/parse-links.service.js"></script>
+    <script src="scripts/components/util/dateutil.service.js"></script>
+    <script src="scripts/app/account/account.js"></script>
+    <script src="scripts/app/account/activate/activate.js"></script>
+    <script src="scripts/app/account/activate/activate.controller.js"></script>
+    <script src="scripts/app/account/login/login.js"></script>
+    <script src="scripts/app/account/login/login.controller.js"></script>
+    <script src="scripts/app/account/logout/logout.js"></script>
+    <script src="scripts/app/account/logout/logout.controller.js"></script>
+    <script src="scripts/app/account/password/password.js"></script>
+    <script src="scripts/app/account/password/password.controller.js"></script>
+    <script src="scripts/app/account/password/password.directive.js"></script>
+    <script src="scripts/app/account/register/register.js"></script>
+    <script src="scripts/app/account/register/register.controller.js"></script>
+    <script src="scripts/app/account/settings/settings.js"></script>
+    <script src="scripts/app/account/settings/settings.controller.js"></script>
+    <script src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
+    <script src="scripts/app/account/reset/finish/reset.finish.js"></script>
+    <script src="scripts/app/account/reset/request/reset.request.controller.js"></script>
+    <script src="scripts/app/account/reset/request/reset.request.js"></script>
+    <script src="scripts/app/admin/admin.js"></script>
+    <script src="scripts/app/admin/audits/audits.js"></script>
+    <script src="scripts/app/admin/audits/audits.controller.js"></script>
+    <script src="scripts/app/admin/configuration/configuration.js"></script>
+    <script src="scripts/app/admin/configuration/configuration.controller.js"></script>
+    <script src="scripts/app/admin/docs/docs.js"></script>
+    <script src="scripts/app/admin/health/health.js"></script>
+    <script src="scripts/app/admin/health/health.controller.js"></script>
+    <script src="scripts/app/admin/health/health.modal.controller.js"></script>
+    <script src="scripts/app/admin/logs/logs.js"></script>
+    <script src="scripts/app/admin/logs/logs.controller.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.controller.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
+    <script src="scripts/app/entities/entity.js"></script>
+    <script src="scripts/app/error/error.js"></script>
+    <script src="scripts/app/main/main.js"></script>
+    <script src="scripts/app/main/main.controller.js"></script>
+    <script src="bower_components/messageformat/locale/en.js"></script>
+    <script src="bower_components/messageformat/locale/fr.js"></script>
+    <script src="scripts/components/language/language.service.js"></script>
+    <script src="scripts/components/language/language.controller.js"></script>
+    <script src="scripts/components/auth/services/sessions.service.js"></script>
+    <script src="scripts/components/auth/provider/auth.session.service.js"></script>
+    <script src="scripts/app/account/sessions/sessions.js"></script>
+    <script src="scripts/app/account/sessions/sessions.controller.js"></script>
+    <script src="scripts/app/entities/equipo/equipo.js"></script>
+    <script src="scripts/app/entities/equipo/equipo.controller.js"></script>
+    <script src="scripts/app/entities/equipo/equipo-dialog.controller.js"></script>
+    <script src="scripts/app/entities/equipo/equipo-detail.controller.js"></script>
+    <script src="scripts/components/entities/equipo/equipo.service.js"></script>
+    <script src="scripts/app/entities/jugador/jugador.js"></script>
+    <script src="scripts/app/entities/jugador/jugador.controller.js"></script>
+    <script src="scripts/app/entities/jugador/jugador-dialog.controller.js"></script>
+    <script src="scripts/app/entities/jugador/jugador-detail.controller.js"></script>
+    <script src="scripts/components/entities/jugador/jugador.service.js"></script>
+    <script src="scripts/app/entities/estadio/estadio.js"></script>
+    <script src="scripts/app/entities/estadio/estadio.controller.js"></script>
+    <script src="scripts/app/entities/estadio/estadio-dialog.controller.js"></script>
+    <script src="scripts/app/entities/estadio/estadio-detail.controller.js"></script>
+    <script src="scripts/components/entities/estadio/estadio.service.js"></script>
+    <script src="scripts/app/entities/socio/socio.js"></script>
+    <script src="scripts/app/entities/socio/socio.controller.js"></script>
+    <script src="scripts/app/entities/socio/socio-dialog.controller.js"></script>
+    <script src="scripts/app/entities/socio/socio-detail.controller.js"></script>
+    <script src="scripts/components/entities/socio/socio.service.js"></script>
+    <script src="scripts/app/entities/entrenador/entrenador.js"></script>
+    <script src="scripts/app/entities/entrenador/entrenador.controller.js"></script>
+    <script src="scripts/app/entities/entrenador/entrenador-dialog.controller.js"></script>
+    <script src="scripts/app/entities/entrenador/entrenador-detail.controller.js"></script>
+    <script src="scripts/components/entities/entrenador/entrenador.service.js"></script>
+    <script src="scripts/app/entities/temporada/temporada.js"></script>
+    <script src="scripts/app/entities/temporada/temporada.controller.js"></script>
+    <script src="scripts/app/entities/temporada/temporada-dialog.controller.js"></script>
+    <script src="scripts/app/entities/temporada/temporada-detail.controller.js"></script>
+    <script src="scripts/components/entities/temporada/temporada.service.js"></script>
+    <!-- endbuild -->
+
+    <script>
+        var app = angular.module('jhipsterApp');
+        app.controller('newPlayerCtrl', function($scope, Jugador, Equipo){
+
+            $scope.equipos;
+            $scope.getEquipos = function(){
+                Equipo.query({}, function(result){
+                    $scope.equipos = result;
+                });
+            };
+
+            $scope.jugador;
+            $scope.save = function(){
+                $scope.isSaving = true;
+                Jugador.save($scope.jugador, guardadoOk, guardarError);
+            };
+            var guardadoOk = function(result){
+                $scope.isSaving = false;
+            };
+            var guardarError = function(result) {
+                $scope.isSaving = false;
+            };
+        });
+    </script>
+</body>
+</html>

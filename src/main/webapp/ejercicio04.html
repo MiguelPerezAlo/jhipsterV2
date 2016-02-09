@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="" ng-init="players=[
+{name:'Miguel',birthday:'24/04/1993',score:234,rebounds:10,assist:120,position:'Alero'},
+{name:'David',birthday:'01/01/0001',score:1,rebounds:11,assist:111,position:'Base'},
+{name:'Lluis',birthday:'31/12/1993',score:200,rebounds:20,assist:220,position:'Escolta'},
+{name:'Alex',birthday:'21/10/1993',score:60,rebounds:320,assist:0,position:'Pivot'},
+{name:'Cuko',birthday:'29/10/1993',score:0,rebounds:0,assist:0,position:'Banquillo'}]">
+<p>Ficha Jugadores (Nombre, Nacimiento, Puntos, Rebotes, Asistencias, Posicion):</p>
+<ul>
+  <li ng-repeat="x in players">
+  {{ x.name + ', ' + x.birthday + ', ' + x.score + ', ' + x.rebounds + ', ' + x.assist + ', ' + x.position }}</li>
+</ul>
+</div>
+</body>
+</html>

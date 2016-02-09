@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="jhipsterApp" ng-controller="controlador">
+<p>Ficha de jugador</p>
+<p>Nombre: <input type="text" ng-model="name"></p>
+<p>Nombre Introducido: {{name}}</p>
+<p>Nacimiento: <input type="text" ng-model="birthday"></p>
+<p>Nacimiento Introducido: {{birthday}}</p>
+<p>Puntos: <input type="number" ng-model="score"></p>
+<p>Puntos Introducidos: {{score}}</p>
+<p>Rebotes: <input type="number" ng-model="rebounds"></p>
+<p>Rebotes Introducidos: {{rebounds}}</p>
+<p>Asistencias: <input type="number" ng-model="assist"></p>
+<p>Asistencias Introducidas: {{assist}}</p>
+<p>Posicion: <input type="text" ng-model="position"></p>
+<p>Posicion Introducida: {{position}}</p>
+</div>
+<script>
+var app = angular.module('jhipsterApp', []);
+app.controller('controlador', function($scope) {
+    $scope.name= "Miguel";
+    $scope.birthday= "24/04/1993";
+    $scope.score= 234;
+    $scope.rebounds= 10;
+    $scope.assist= 120;
+    $scope.position= "Alero";
+});
+</script></body>
+</html>

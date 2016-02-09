@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="jhipsterApp" ng-controller="controlador">
+Nombre: <input ng-model="nombre"><br>
+Nacimiento: <input ng-model="nacimiento"><br>
+Puntos: <input ng-model="puntos"><br>
+Rebotes: <input ng-model="rebotes"><br>
+Asistencias: <input ng-model="asistencias"><br>
+Posición: <input ng-model="posicion">
+<h1>Ficha de {{nombre}}:</h1>
+<p>El jugador {{nombre}}, nacido el dia {{nacimiento}}, lleva un total de {{puntos}} puntos con su equipo actual. Además ha atrapado {{rebotes}} rebotes y ha asistido a sus compañeros un total de {{asistencias}} veces. Su posición preferida es la de {{posicion}}.</p>
+</div>
+<script>
+var app = angular.module('jhipsterApp');
+app.controller('controlador', function($scope) {
+    $scope.nombre = "Miguel Pérez";
+    $scope.nacimiento = "24/04/1993";
+    $scope.puntos = "240";
+    $scope.rebotes = "10";
+    $scope.asistencias = "150";
+    $scope.posicion = "alero";
+});
+</script>
+</body>
+</html>
